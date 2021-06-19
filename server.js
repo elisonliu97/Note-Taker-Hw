@@ -28,10 +28,10 @@ app.get('*', (req, res) => res.sendFile(path.join(__dirname, 'public/index.html'
 app.post('/api/notes', (req, res) => {
     let newNote = req.body;
 
+    // Generate unique ids for each note
     newNote.id = uuidv4();
 
-    console.log(newNote);
-
+    // push note to database and rewrite over database file
     notes.push(newNote);
     fs.writeFileSync(path.join(__dirname, 'db/db.json'), JSON.stringify(notes));
     res.json(newNote);
@@ -40,9 +40,11 @@ app.post('/api/notes', (req, res) => {
 // DELETE ROUTES
 app.delete('/api/notes/:id', (req, res) => {
     const chosen = req.params.id;
+    // check for unique id of chosen note and return database with that unique id filtered out
     notes = notes.filter((value) => {
         return (value.id !== chosen);
     })
+    // rewrite over database file with filtered database
     fs.writeFileSync(path.join(__dirname, 'db/db.json'), JSON.stringify(notes));
     res.send(`Deleted ${chosen}`)
 })
