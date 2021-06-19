@@ -20,6 +20,7 @@
   The saved notes are displayed at the left side, and the right side has input boxes for the title of the note and the text body of the note.
   When the input boxes are filled, a save icon appears in the top right corner. To save the note, click on the save icon.
   Clicking on saved notes on the left side will bring back the saved note's data. To enter in a new note, click on the plus icon on the top right of the screen.
+  To delete a saved note, click on the trash icon next to the saved note's title.
   - [Deployed Application](https://note-taker-hw-el.herokuapp.com/)
   ![image](https://user-images.githubusercontent.com/28275237/122628557-abb5a200-d084-11eb-9344-07ff8cab2229.png)
   ![image](https://user-images.githubusercontent.com/28275237/122628541-9476b480-d084-11eb-86d0-e69ed4fed768.png)
